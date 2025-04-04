@@ -20,18 +20,20 @@ namespace LivingDocumentationEvent.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LoanApplicationExample01After")]
+    [NUnit.Framework.DescriptionAttribute("LoanApplicationProcessing")]
     [NUnit.Framework.FixtureLifeCycleAttribute(NUnit.Framework.LifeCycle.InstancePerTestCase)]
-    public partial class LoanApplicationExample01AfterFeature
+    public partial class LoanApplicationProcessingFeature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoanApplicationExample01After", "That looks much better! And the code is easier to maintain and extend, too!", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoanApplicationProcessing", "  As a loan application back office employee\r\n  I want to be able to process inco" +
+                "ming loan requests\r\n  So we can communicate the results to our customer in a tim" +
+                "ely manner", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
-#line 1 "LoanApplicationExample01After.feature"
+#line 1 "LoanApplicationExample01MoreExamples.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -83,13 +85,13 @@ namespace LivingDocumentationEvent.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A loan application within regulatory boundaries should be approved - after")]
-        public async System.Threading.Tasks.Task ALoanApplicationWithinRegulatoryBoundariesShouldBeApproved_After()
+        [NUnit.Framework.DescriptionAttribute("Multiple pending loan applications for a customer can be approved at once")]
+        public async System.Threading.Tasks.Task MultiplePendingLoanApplicationsForACustomerCanBeApprovedAtOnce()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A loan application within regulatory boundaries should be approved - after", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Multiple pending loan applications for a customer can be approved at once", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,41 +101,46 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
-                            "Name",
-                            "Valid line of credit"});
-                table1.AddRow(new string[] {
-                            "John",
-                            "true"});
-#line 5
-  await testRunner.GivenAsync("a registered bank user", ((string)(null)), table1, "Given ");
-#line hidden
-                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
-                            "ID",
-                            "Type",
-                            "Balance"});
-                table2.AddRow(new string[] {
-                            "12345",
-                            "checking",
-                            "1500"});
-#line 8
-  await testRunner.AndAsync("they have a bank account", ((string)(null)), table2, "And ");
-#line hidden
-                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
                             "Applicant",
                             "Amount",
-                            "Down payment",
-                            "From account ID"});
-                table3.AddRow(new string[] {
+                            "Status"});
+                table4.AddRow(new string[] {
+                            "Susan",
+                            "1000",
+                            "Submitted"});
+                table4.AddRow(new string[] {
+                            "Susan",
+                            "2000",
+                            "Submitted"});
+                table4.AddRow(new string[] {
                             "John",
                             "1000",
-                            "100",
-                            "12345"});
-#line 11
-  await testRunner.WhenAsync("they submit a loan application", ((string)(null)), table3, "When ");
+                            "Submitted"});
+#line 8
+ await testRunner.GivenAsync("the loan application workload contains the following applications:", ((string)(null)), table4, "Given ");
 #line hidden
+#line 13
+ await testRunner.WhenAsync("the loan applications for Susan are approved", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table5 = new global::Reqnroll.Table(new string[] {
+                            "Applicant",
+                            "Amount",
+                            "Status"});
+                table5.AddRow(new string[] {
+                            "Susan",
+                            "1000",
+                            "Approved"});
+                table5.AddRow(new string[] {
+                            "Susan",
+                            "2000",
+                            "Approved"});
+                table5.AddRow(new string[] {
+                            "John",
+                            "1000",
+                            "Submitted"});
 #line 14
-  await testRunner.ThenAsync("the loan application is approved", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("the loan application workload contains the following applications:", ((string)(null)), table5, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

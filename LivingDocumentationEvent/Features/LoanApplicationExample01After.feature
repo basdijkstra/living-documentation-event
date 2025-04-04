@@ -9,6 +9,6 @@ Scenario: A loan application within regulatory boundaries should be approved - a
   | ID    | Type     | Balance |
   | 12345 | checking | 1500    |
   When they submit a loan application
-  | Amount | Down payment | From account ID |
-  | 1000   | 100          | 12345           |
+  | Applicant | Amount | Down payment | From account ID |
+  | John      | 1000   | 100          | 12345           |
   Then the loan application is approved
