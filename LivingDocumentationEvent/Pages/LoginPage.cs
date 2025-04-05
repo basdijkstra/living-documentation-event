@@ -32,6 +32,8 @@ namespace LivingDocumentationEvent.Pages
 
         private void SendKeys(By by, string valueToType)
         {
+            Thread.Sleep(1000);
+
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             try
@@ -53,6 +55,8 @@ namespace LivingDocumentationEvent.Pages
 
         public void Click(By by)
         {
+            Thread.Sleep(1000);
+
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             try

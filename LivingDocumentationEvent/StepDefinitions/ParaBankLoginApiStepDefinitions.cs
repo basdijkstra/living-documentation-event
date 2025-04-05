@@ -1,27 +1,20 @@
 using LivingDocumentationEvent.Models;
-using LivingDocumentationEvent.Pages;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using NUnit.Framework;
+using static RestAssured.Dsl;
 
 namespace LivingDocumentationEvent.StepDefinitions
 {
-    public class ParaBankLoginStepDefinitions
+    public class ParaBankLoginApiStepDefinitions
     {
         private User user;
-        private WebDriver driver;
-
-        [BeforeScenario]
-        public void StartBrowser()
-        {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-        }
+        private long customerId;
 
         [Given("a user with username {word} and password {word}")]
         public void GivenAUserWithUsernameJohnAndPasswordDemo(string username, string password)
         {
             user = new User
             {
+                Id = 12212,
                 Username = username,
                 Password = password
             };
@@ -30,20 +23,19 @@ namespace LivingDocumentationEvent.StepDefinitions
         [When("they perform a login on the ParaBank frontend")]
         public void WhenTheyPerformALoginOnTheParaBankFrontend()
         {
-            new LoginPage(driver)
-                .Open()
-                .LoginAs(user.Username, user.Password);
+            customerId = (long)Given()
+                .Accept("application/json")
+                .When()
+                .Get($"http://localhost:8080/parabank/services/bank/login/{user.Username}/{user.Password}")
+                .Then()
+                .Extract()
+                .Body("$.id");                
         }
 
         [Then("the login should be successful")]
         public void ThenTheLoginShouldBeSuccessful()
         {
-        }
-
-        [AfterScenario]
-        public void StopBrowser()
-        {
-            this.driver.Quit();
+            Assert.That(customerId, Is.EqualTo(user.Id));
         }
     }
 }

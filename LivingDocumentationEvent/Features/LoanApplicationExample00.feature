@@ -1,4 +1,4 @@
-﻿Feature: ParaBankLogin
+﻿Feature: LoanApplicationExample00
 Because I want to be able to log in to ParaBank
 
 Scenario: Login succeeds with valid credentials

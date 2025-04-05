@@ -20,18 +20,18 @@ namespace LivingDocumentationEvent.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ParaBankLogin")]
+    [NUnit.Framework.DescriptionAttribute("LoanApplicationExample00")]
     [NUnit.Framework.FixtureLifeCycleAttribute(NUnit.Framework.LifeCycle.InstancePerTestCase)]
-    public partial class ParaBankLoginFeature
+    public partial class LoanApplicationExample00Feature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ParaBankLogin", "Because I want to be able to log in to ParaBank", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoanApplicationExample00", "Because I want to be able to log in to ParaBank", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
-#line 1 "ParaBankLogin.feature"
+#line 1 "LoanApplicationExample00.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]

@@ -20,6 +20,8 @@ namespace LivingDocumentationEvent.Pages
 
         private bool ElementIsVisible(By by)
         {
+            Thread.Sleep(1000);
+
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             try
