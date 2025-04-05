@@ -20,18 +20,18 @@ namespace LivingDocumentationEvent.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LoanApplicationExample00")]
+    [NUnit.Framework.DescriptionAttribute("LoanApplicationExample02Before")]
     [NUnit.Framework.FixtureLifeCycleAttribute(NUnit.Framework.LifeCycle.InstancePerTestCase)]
-    public partial class LoanApplicationExample00Feature
+    public partial class LoanApplicationExample02BeforeFeature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoanApplicationExample00", "Because I want to be able to log in to ParaBank", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoanApplicationExample02Before", "Because I want to be able to log in to ParaBank both through the UI and the API", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
-#line 1 "LoanApplicationExample00.feature"
+#line 1 "LoanApplicationExample02Before.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -83,12 +83,12 @@ namespace LivingDocumentationEvent.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login succeeds with valid credentials")]
-        public async System.Threading.Tasks.Task LoginSucceedsWithValidCredentials()
+        [NUnit.Framework.DescriptionAttribute("Login succeeds through the API with valid credentials")]
+        public async System.Threading.Tasks.Task LoginSucceedsThroughTheAPIWithValidCredentials()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Login succeeds with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Login succeeds through the API with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -107,6 +107,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 7
   await testRunner.ThenAsync("the login should be successful", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Login succeeds through the frontend with valid credentials")]
+        public async System.Threading.Tasks.Task LoginSucceedsThroughTheFrontendWithValidCredentials()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Login succeeds through the frontend with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 9
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 10
+  await testRunner.GivenAsync("a frontend user with username john and password demo", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 11
+  await testRunner.WhenAsync("they perform a login on the ParaBank frontend", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 12
+  await testRunner.ThenAsync("the frontend login should be successful", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

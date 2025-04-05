@@ -20,8 +20,8 @@ namespace LivingDocumentationEvent.StepDefinitions
             };
         }
 
-        [When("they perform a login on the ParaBank frontend")]
-        public void WhenTheyPerformALoginOnTheParaBankFrontend()
+        [When("they perform a login on the ParaBank API")]
+        public void WhenTheyPerformALoginOnTheParaBankApi()
         {
             customerId = (long)Given()
                 .Accept("application/json")
