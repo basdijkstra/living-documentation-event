@@ -103,10 +103,10 @@ this.ScenarioInitialize(scenarioInfo);
   await testRunner.GivenAsync("a user with username john and password demo", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 6
-  await testRunner.WhenAsync("they perform a login on the ParaBank API", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+  await testRunner.WhenAsync("they perform a login on the ParaBank frontend", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 7
-  await testRunner.ThenAsync("the login should be successful", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+  await testRunner.ThenAsync("the frontend login should be successful", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

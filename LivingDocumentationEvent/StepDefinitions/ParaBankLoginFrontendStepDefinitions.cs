@@ -6,13 +6,12 @@ using OpenQA.Selenium.Chrome;
 
 namespace LivingDocumentationEvent.StepDefinitions
 {
-    [Binding]
     public class ParaBankLoginFrontendStepDefinitions
     {
         private User user;
         private WebDriver driver;
 
-        [Given("a frontend user with username {word} and password {word}")]
+        [Given("a user with username {word} and password {word}")]
         public void GivenAUserWithUsernameJohnAndPasswordDemo(string username, string password)
         {
             user = new User

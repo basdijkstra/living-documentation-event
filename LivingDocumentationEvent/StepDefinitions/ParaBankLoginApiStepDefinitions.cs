@@ -4,21 +4,11 @@ using static RestAssured.Dsl;
 
 namespace LivingDocumentationEvent.StepDefinitions
 {
+    [Binding]
     public class ParaBankLoginApiStepDefinitions
     {
         private User user;
         private long customerId;
-
-        [Given("a user with username {word} and password {word}")]
-        public void GivenAUserWithUsernameJohnAndPasswordDemo(string username, string password)
-        {
-            user = new User
-            {
-                Id = 12212,
-                Username = username,
-                Password = password
-            };
-        }
 
         [When("they perform a login on the ParaBank API")]
         public void WhenTheyPerformALoginOnTheParaBankApi()

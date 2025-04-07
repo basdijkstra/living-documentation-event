@@ -64,7 +64,7 @@ namespace LivingDocumentationEvent.StepDefinitions
         [Then("^the loan application is (approved|denied)$")]
         public void ThenTheLoanApplicationIsApprovedOrDenied(string loanApplicationResult)
         {
-            // Check the application result
+            // This is where the application result is verified
         }
     }
 }
