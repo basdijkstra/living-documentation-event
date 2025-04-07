@@ -24,8 +24,22 @@ Scenario: Logging in through the UI is possible
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Scenario: Logging in through the API is possible
 #  Given a user with username john and password demo
 #  When they perform a login on the ParaBank API
-#  Then the login should be successful
-
+#  Then the API login should be successful

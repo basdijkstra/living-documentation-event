@@ -1,6 +1,6 @@
 ﻿namespace LivingDocumentationEvent.Models
 {
-    internal class LoanApplication
+    public class LoanApplication
     {
         public string Applicant {  get; set; }
         public int Amount { get; set; }
